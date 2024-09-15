@@ -1,14 +1,10 @@
-/*
-
-*/
-
 const container = document.querySelector(".container");
 const squaresBtn = document.querySelector(".squares-btn");
 let squaresDivs = 16;
-// let squareSize = 640 / squaresDivs;
-// squareSize = (squareSize.toString()+"px");
 
-// console.log(squaresDivs)
+function randomNumber() {
+  return Math.floor(Math.random() * 255)
+}
 
 function generateDivs(num) {
   for (let i= 0; i < num * num; i++) {
@@ -20,7 +16,7 @@ function generateDivs(num) {
     div.style.height = squareSize;
     container.appendChild(div);
     div.addEventListener('mouseover', () => {
-      div.style.backgroundColor = "black";
+      div.style.backgroundColor = `rgb(${randomNumber()} ${randomNumber()} ${randomNumber()})`;
     })
   }
 }
